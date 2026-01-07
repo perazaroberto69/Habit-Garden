@@ -1,0 +1,804 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #2d5016 0%, #3a5f1b 50%, #4a7c59 100%);
+    color: #2c3e20;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 414px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #f4f1e8 0%, #e8f5e8 100%);
+    min-height: 100vh;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    color: #f4f1e8;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    font-size: 40px;
+    background: rgba(244, 241, 232, 0.2);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-details h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.user-details p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.currency {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.coins, .diamonds {
+    background: rgba(244, 241, 232, 0.2);
+    padding: 8px 12px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Main Content */
+.main-content {
+    padding: 20px;
+    padding-bottom: 100px;
+}
+
+/* Current Plant Section */
+.current-plant {
+    background: linear-gradient(135deg, #f0f8e8 0%, #e8f5e8 100%);
+    border: 2px solid #8fbc8f;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 20px rgba(143, 188, 143, 0.3);
+}
+
+.plant-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.plant-display {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.plant {
+    font-size: 60px;
+    margin-bottom: 10px;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+}
+
+.plant-name {
+    font-weight: bold;
+    color: #2d5016;
+    margin-bottom: 5px;
+}
+
+.plant-tier {
+    background: linear-gradient(135deg, #daa520 0%, #ffd700 100%);
+    color: #8b4513;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.plant-status {
+    flex: 1;
+}
+
+.health-bar {
+    margin-bottom: 15px;
+}
+
+.label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #2d5016;
+}
+
+.progress-bar {
+    background: #d3d3d3;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.progress {
+    background: linear-gradient(90deg, #32cd32 0%, #228b22 100%);
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+.percentage {
+    font-size: 12px;
+    color: #2d5016;
+    font-weight: bold;
+}
+
+.next-tier {
+    font-size: 14px;
+    color: #556b2f;
+    font-style: italic;
+}
+
+/* Daily Habits */
+.daily-habits h3 {
+    color: #2d5016;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.habits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.habit-card {
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.habit-card.completed {
+    border-color: #32cd32;
+    background: linear-gradient(135deg, #f0fff0 0%, #e8f5e8 100%);
+}
+
+.habit-card.pending {
+    border-color: #ffa500;
+    background: linear-gradient(135deg, #fffaf0 0%, #fdf5e6 100%);
+}
+
+.habit-icon {
+    font-size: 24px;
+    width: 40px;
+    text-align: center;
+}
+
+.habit-info {
+    flex: 1;
+}
+
+.habit-info h4 {
+    color: #2d5016;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.habit-info p {
+    color: #556b2f;
+    font-size: 14px;
+}
+
+.habit-status {
+    font-size: 20px;
+}
+
+/* Quick Stats */
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #8fbc8f 0%, #9acd32 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(143, 188, 143, 0.4);
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 414px;
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: rgba(244, 241, 232, 0.7);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-item.active {
+    color: #f4f1e8;
+}
+
+.nav-item:hover {
+    color: #f4f1e8;
+    transform: translateY(-2px);
+}
+
+.nav-icon {
+    font-size: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 414px) {
+    .container {
+        max-width: 100%;
+    }
+    
+    .plant-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .quick-stats {
+        grid-template-columns: 1fr;
+    }
+}
+/* Garden Page Specific Styles */
+.garden-overview {
+    background: linear-gradient(135deg, #f0f8e8 0%, #e8f5e8 100%);
+    border: 2px solid #8fbc8f;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.garden-overview h3 {
+    color: #2d5016;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.garden-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.mini-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2d5016;
+}
+
+.stat-icon {
+    font-size: 16px;
+}
+
+/* Garden Grid */
+.garden-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.plant-slot {
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.plant-slot:hover {
+    transform: translateY(-5px);
+}
+
+.plant-slot.tier-1 {
+    background: linear-gradient(135deg, #f0fff0 0%, #e8f5e8 100%);
+    border: 2px solid #90ee90;
+}
+
+.plant-slot.tier-2 {
+    background: linear-gradient(135deg, #e6f3ff 0%, #cce7ff 100%);
+    border: 2px solid #87ceeb;
+}
+
+.plant-slot.tier-3 {
+    background: linear-gradient(135deg, #fff0e6 0%, #ffe6cc 100%);
+    border: 2px solid #daa520;
+}
+
+.plant-display {
+    text-align: center;
+}
+
+.plant-emoji {
+    font-size: 40px;
+    margin-bottom: 10px;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+}
+
+.plant-info h4 {
+    color: #2d5016;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.tier-badge {
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+    
+/* Islands Page Specific Styles */
+.income-overview {
+    margin-bottom: 25px;
+}
+
+.income-card {
+    background: linear-gradient(135deg, #daa520 0%, #ffd700 100%);
+    color: #8b4513;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.3);
+}
+
+.income-icon {
+    font-size: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.income-info h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.income-amount {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.income-detail {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.islands-section h3 {
+    color: #2d5016;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Island Cards */
+.island-card {
+    background: linear-gradient(135deg, #f0f8e8 0%, #e8f5e8 100%);
+    border: 2px solid #8fbc8f;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(143, 188, 143, 0.3);
+}
+
+.island-card.purchasable {
+    border-color: #daa520;
+    background: linear-gradient(135deg, #fffaf0 0%, #fdf5e6 100%);
+}
+
+.island-card.premium-purchasable {
+    border-color: #9370db;
+    background: linear-gradient(135deg, #f8f0ff 0%, #f0e6ff 100%);
+}
+
+.island-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.island-header h4 {
+    color: #2d5016;
+    font-size: 18px;
+}
+
+.island-income {
+    background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.island-price {
+    background: linear-gradient(135deg, #daa520 0%, #ffd700 100%);
+    color: #8b4513;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Plant Slots */
+.island-plants {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.plant-slot {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.plant-slot:hover {
+    transform: scale(1.05);
+}
+
+.plant-slot.occupied {
+    background: linear-gradient(135deg, #ffffff 0%, #f0fff0 100%);
+    border: 2px solid #32cd32;
+}
+
+.plant-slot.premium {
+    background: linear-gradient(135deg, #fff0e6 0%, #ffe6cc 100%);
+    border: 2px solid #daa520;
+    box-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+}
+
+.plant-slot.empty {
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px dashed #ccc;
+    cursor: pointer;
+}
+
+.plant-slot.locked {
+    background: rgba(200, 200, 200, 0.3);
+    border: 2px solid #999;
+}
+
+.plant-icon {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.plant-earnings {
+    font-size: 10px;
+    font-weight: bold;
+    color: #228b22;
+}
+
+.empty-slot {
+    font-size: 24px;
+    color: #ccc;
+    font-weight: bold;
+}
+
+.locked-icon {
+    font-size: 16px;
+    color: #999;
+}
+
+.island-status {
+    font-size: 14px;
+    color: #556b2f;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Available Islands */
+.available-islands {
+    margin-top: 30px;
+}
+
+.available-islands h4 {
+    color: #2d5016;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.island-preview {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.preview-text {
+    font-size: 14px;
+    color: #556b2f;
+    margin-bottom: 5px;
+}
+.preview-bonus {
+    font-size: 12px;
+    color: #daa520;
+}
+/* Breeding Lab Specific Styles */
+.active-breeding h3 {
+    color: #2d5016;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Breeding Slots */
+.breeding-slot {
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.breeding-slot.active {
+    background: linear-gradient(135deg, #e6f3ff 0%, #cce7ff 100%);
+    border: 2px solid #87ceeb;
+}
+
+.breeding-slot.ready {
+    background: linear-gradient(135deg, #f0fff0 0%, #e8f5e8 100%);
+    border: 2px solid #32cd32;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 6px 20px rgba(50, 205, 50, 0.3); }
+    to { box-shadow: 0 6px 30px rgba(50, 205, 50, 0.6); }
+}
+
+.breeding-slot.empty {
+    background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+    border: 2px dashed #ccc;
+    text-align: center;
+}
+
+.breeding-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.breeding-header h4 {
+    color: #2d5016;
+    font-size: 18px;
+}
+
+.breeding-status {
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 12px;
+    background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+    color: white;
+}
+
+.breeding-status.ready {
+    background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Breeding Combination */
+.breeding-combination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+}
+
+.parent-plant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.parent-plant .plant-icon {
+    font-size: 30px;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+}
+
+.parent-plant span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #2d5016;
+    text-align: center;
+}
+
+.breeding-symbol {
+    font-size: 24px;
+    margin: 0 15px;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(180deg); }
+}
+
+/* Breeding Timer */
+.breeding-timer {
+    margin-bottom: 15px;
+}
+
+.timer-display {
+    text-align: center;
+}
+
+.time-remaining {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2d5016;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    background: #d3d3d3;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress {
+    background: linear-gradient(90deg, #87ceeb 0%, #4682b4 100%);
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* Breeding Chances */
+.breeding-chances {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chance-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.chance-icon {
+    font-size: 16px;
+}
+
+/* Shop Page Specific Styles */
+.featured-section {
+    margin-bottom: 30px;
+}
+
+.featured-banner {
+    background: linear-gradient(135deg, #dc143c 0%, #b22222 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.3);
+}
+
+.banner-content h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.banner-content p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.banner-timer {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 15px;
+}
