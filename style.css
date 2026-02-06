@@ -802,3 +802,76 @@ body {
     padding: 8px 15px;
     border-radius: 15px;
 }
+
+/* Page Transition Effects */
+.page-transition {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+/* Cleaner Shop Styles */
+.featured-section {
+    margin-bottom: 25px;
+}
+
+.featured-banner {
+    background: linear-gradient(135deg, #dc143c 0%, #b22222 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+}
+
+.banner-content h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.banner-content p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+/* Shop Item Cards - Cleaner Design */
+.shop-item {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.shop-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 
+}
