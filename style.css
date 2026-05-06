@@ -449,164 +449,7 @@ body {
     opacity: 0.8;
 }
 
-.islands-section h3 {
-    color: #2d5016;
-    margin-bottom: 20px;
-    font-size: 22px;
-    text-align: center;
-}
 
-/* Island Cards */
-.island-card {
-    background: linear-gradient(135deg, #f0f8e8 0%, #e8f5e8 100%);
-    border: 2px solid #8fbc8f;
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 6px 20px rgba(143, 188, 143, 0.3);
-}
-
-.island-card.purchasable {
-    border-color: #daa520;
-    background: linear-gradient(135deg, #fffaf0 0%, #fdf5e6 100%);
-}
-
-.island-card.premium-purchasable {
-    border-color: #9370db;
-    background: linear-gradient(135deg, #f8f0ff 0%, #f0e6ff 100%);
-}
-
-.island-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.island-header h4 {
-    color: #2d5016;
-    font-size: 18px;
-}
-
-.island-income {
-    background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.island-price {
-    background: linear-gradient(135deg, #daa520 0%, #ffd700 100%);
-    color: #8b4513;
-    padding: 6px 12px;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-/* Plant Slots */
-.island-plants {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.plant-slot {
-    aspect-ratio: 1;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    position: relative;
-    transition: transform 0.3s ease;
-}
-
-.plant-slot:hover {
-    transform: scale(1.05);
-}
-
-.plant-slot.occupied {
-    background: linear-gradient(135deg, #ffffff 0%, #f0fff0 100%);
-    border: 2px solid #32cd32;
-}
-
-.plant-slot.premium {
-    background: linear-gradient(135deg, #fff0e6 0%, #ffe6cc 100%);
-    border: 2px solid #daa520;
-    box-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
-}
-
-.plant-slot.empty {
-    background: rgba(255, 255, 255, 0.5);
-    border: 2px dashed #ccc;
-    cursor: pointer;
-}
-
-.plant-slot.locked {
-    background: rgba(200, 200, 200, 0.3);
-    border: 2px solid #999;
-}
-
-.plant-icon {
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.plant-earnings {
-    font-size: 10px;
-    font-weight: bold;
-    color: #228b22;
-}
-
-.empty-slot {
-    font-size: 24px;
-    color: #ccc;
-    font-weight: bold;
-}
-
-.locked-icon {
-    font-size: 16px;
-    color: #999;
-}
-
-.island-status {
-    font-size: 14px;
-    color: #556b2f;
-    text-align: center;
-    font-style: italic;
-}
-
-/* Available Islands */
-.available-islands {
-    margin-top: 30px;
-}
-
-.available-islands h4 {
-    color: #2d5016;
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.island-preview {
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.preview-text {
-    font-size: 14px;
-    color: #556b2f;
-    margin-bottom: 5px;
-}
-.preview-bonus {
-    font-size: 12px;
-    color: #daa520;
-}
 /* Breeding Lab Specific Styles */
 .active-breeding h3 {
     color: #2d5016;
@@ -1047,3 +890,551 @@ body {
         font-size: 13px;
     }
 }
+
+/* Islands Page Specific Styles */
+.income-overview {
+    margin-bottom: 25px;
+}
+
+.income-card {
+    background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
+    color: #8b4513;
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 25px rgba(218, 165, 32, 0.4);
+    border: 3px solid rgba(255, 215, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.income-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(218, 165, 32, 0.5);
+}
+
+.income-icon {
+    font-size: 50px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.income-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.income-amount {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.income-detail {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.islands-section h3 {
+    color: #2d5016;
+    margin-bottom: 25px;
+    font-size: 24px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Island Cards */
+.island-card {
+    background: linear-gradient(135deg, #f0f8e8 0%, #e8f5e8 100%);
+    border: 3px solid #8fbc8f;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(143, 188, 143, 0.3);
+    transition: all 0.3s ease;
+}
+
+.island-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(143, 188, 143, 0.4);
+}
+
+.island-card.active {
+    border-color: #32cd32;
+    background: linear-gradient(135deg, #f0fff0 0%, #e8f5e8 100%);
+}
+
+.island-card.purchasable {
+    border-color: #daa520;
+    background: linear-gradient(135deg, #fffaf0 0%, #fdf5e6 100%);
+    opacity: 0.9;
+}
+
+.island-card.purchasable:hover {
+    opacity: 1;
+}
+
+.island-card.premium-purchasable {
+    border-color: #9370db;
+    background: linear-gradient(135deg, #f8f0ff 0%, #f0e6ff 100%);
+    opacity: 0.9;
+}
+
+.island-card.premium-purchasable:hover {
+    opacity: 1;
+    box-shadow: 0 12px 30px rgba(147, 112, 219, 0.5);
+}
+
+.island-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(143, 188, 143, 0.3);
+}
+
+.island-header h4 {
+    color: #2d5016;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.island-income {
+    background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(50, 205, 50, 0.3);
+}
+
+.island-price {
+    background: linear-gradient(135deg, #daa520 0%, #ffd700 100%);
+    color: #8b4513;
+    padding: 8px 16px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(218, 165, 32, 0.3);
+}
+
+/* Plant Slots on Islands */
+.island-plants {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.island-plants .plant-slot {
+    aspect-ratio: 1;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+
+.island-plants .plant-slot:hover {
+    transform: scale(1.05);
+}
+
+.island-plants .plant-slot.occupied {
+    background: linear-gradient(135deg, #ffffff 0%, #f0fff0 100%);
+    border: 3px solid #32cd32;
+    box-shadow: 0 4px 15px rgba(50, 205, 50, 0.3);
+}
+
+.island-plants .plant-slot.premium {
+    background: linear-gradient(135deg, #fff0e6 0%, #ffe6cc 100%);
+    border: 3px solid #daa520;
+    box-shadow: 0 0 15px rgba(218, 165, 32, 0.5);
+    animation: premiumGlow 2s ease-in-out infinite;
+}
+
+@keyframes premiumGlow {
+    0%, 100% { box-shadow: 0 0 15px rgba(218, 165, 32, 0.5); }
+    50% { box-shadow: 0 0 25px rgba(218, 165, 32, 0.8); }
+}
+
+.island-plants .plant-slot.empty {
+    background: rgba(255, 255, 255, 0.6);
+    border: 3px dashed #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.island-plants .plant-slot.empty:hover {
+    background: rgba(143, 188, 143, 0.2);
+    border-color: #8fbc8f;
+}
+
+.island-plants .plant-slot.locked {
+    background: rgba(200, 200, 200, 0.4);
+    border: 3px solid #999;
+    cursor: not-allowed;
+}
+
+.island-plants .plant-icon {
+    font-size: 28px;
+    margin-bottom: 5px;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+.island-plants .plant-earnings {
+    font-size: 11px;
+    font-weight: bold;
+    color: #228b22;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2px 8px;
+    border-radius: 8px;
+}
+
+.island-plants .empty-slot {
+    font-size: 32px;
+    color: #ccc;
+    font-weight: bold;
+}
+
+.island-plants .locked-icon {
+    font-size: 20px;
+    color: #999;
+}
+
+.island-status {
+    font-size: 14px;
+    color: #556b2f;
+    text-align: center;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Available Islands */
+.available-islands {
+    margin-top: 40px;
+}
+
+.available-islands h4 {
+    color: #2d5016;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.island-preview {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.preview-text {
+    font-size: 14px;
+    color: #556b2f;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.preview-bonus {
+    font-size: 13px;
+    color: #daa520;
+    font-weight: bold;
+    background: rgba(218, 165, 32, 0.1);
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Purchase Buttons */
+.purchase-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(50, 205, 50, 0.3);
+}
+
+.purchase-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(50, 205, 50, 0.4);
+}
+
+.purchase-btn.premium {
+    background: linear-gradient(135deg, #9370db 0%, #8a2be2 100%);
+    box-shadow: 0 4px 15px rgba(147, 112, 219, 0.3);
+}
+
+.purchase-btn.premium:hover {
+    box-shadow: 0 6px 20px rgba(147, 112, 219, 0.4);
+}
+
+/* Collection Section */
+.collection-section {
+    margin-top: 30px;
+}
+
+.collection-card {
+    background: linear-gradient(135deg, #90ee90 0%, #32cd32 100%);
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 25px rgba(50, 205, 50, 0.4);
+    animation: collectPulse 2s ease-in-out infinite;
+}
+
+@keyframes collectPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.collection-icon {
+    font-size: 50px;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.collection-info {
+    flex: 1;
+}
+
+.collection-info h4 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.collection-info p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.collect-btn {
+    background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
+    color: #8b4513;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.collect-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Responsive Design for Islands */
+@media (max-width: 414px) {
+    .income-card {
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    .income-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 35px;
+    }
+    
+    .income-amount {
+        font-size: 24px;
+    }
+    
+    .island-plants {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    
+    .island-plants .plant-icon {
+        font-size: 24px;
+    }
+    
+    .island-header h4 {
+        font-size: 16px;
+    }
+}
+
+/* Getting Started Islands */
+.getting-started-islands {
+    margin-bottom: 30px;
+}
+
+.getting-started-islands .guide-card {
+    background: linear-gradient(135deg, #e8f5e8 0%, #d4edda 100%);
+    border: 2px solid #8fbc8f;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.getting-started-islands .guide-icon {
+    font-size: 40px;
+    flex-shrink: 0;
+}
+
+.getting-started-islands .guide-text h4 {
+    color: #2d5016;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.getting-started-islands .guide-text p {
+    color: #556b2f;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Island Description */
+.island-description {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.island-description p {
+    color: #556b2f;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Premium Badge */
+.premium-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #9370db 0%, #8a2be2 100%);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(147, 112, 219, 0.4);
+}
+
+.premium-badge.ultimate {
+    background: linear-gradient(135deg, #ffd700 0%, #ff6347 100%);
+}
+
+.island-card {
+    position: relative;
+}
+
+/* Plant Selector Modal */
+.plant-selector-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #f0f8e8 0%, #e8f5e8 100%);
+    border-radius: 20px;
+    padding: 0;
+    max-width: 90%;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.close-modal {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.plant-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.plant-option {
+    background: white;
+    border: 3px solid #8fbc8f;
+    border-radius: 15px;
+    padding: 15px;
+    
