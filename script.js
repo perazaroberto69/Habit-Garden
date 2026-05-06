@@ -1,4 +1,4 @@
-// Massive plant tier data - 30 tiers for habit progression
+
 let plantTiers = [
     { tier: 1, name: 'Tiny Seedling', emoji: '🌱' },
     { tier: 2, name: 'Baby Sprout', emoji: '🌿' },
@@ -32,7 +32,6 @@ let plantTiers = [
     { tier: 30, name: 'ABSOLUTE PERFECTION', emoji: '🏆' }
 ];
 
-// Habit progress data
 let habitTargets = {
     'Water Intake': { current: 0, target: 8, unit: 'glasses' },
     'Exercise': { current: 0, target: 30, unit: 'min' },

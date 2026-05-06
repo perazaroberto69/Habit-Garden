@@ -14,12 +14,12 @@
                 <div class="avatar">🌿</div>
                 <div class="user-details">
                     <h2>My Forest Garden</h2>
-                    <p>12 plants thriving in your care</p>
+                    <p id="garden-summary">1 plant growing in your care</p>
                 </div>
             </div>
             <div class="currency">
-                <div class="coins">🪙 1,247</div>
-                <div class="diamonds">💎 15</div>
+                <div class="coins">🪙 0</div>
+                <div class="diamonds">💎 5</div>
             </div>
         </header>
 
@@ -27,189 +27,30 @@
         <main class="main-content">
             <!-- Active Plants Section -->
             <section class="garden-overview">
-                <h3>Your Thriving Forest</h3>
+                <h3>Your Growing Forest</h3>
                 <div class="garden-stats">
                     <div class="mini-stat">
                         <span class="stat-icon">🌱</span>
-                        <span>5 Growing</span>
+                        <span id="growing-count">1 Growing</span>
                     </div>
                     <div class="mini-stat">
                         <span class="stat-icon">🌸</span>
-                        <span>4 Blooming</span>
+                        <span id="blooming-count">0 Blooming</span>
                     </div>
                     <div class="mini-stat">
                         <span class="stat-icon">🌳</span>
-                        <span>3 Mature</span>
+                        <span id="mature-count">0 Mature</span>
                     </div>
                 </div>
             </section>
 
             <!-- Garden Grid -->
-                       <!-- Garden Grid -->
-            <section class="garden-grid">
-                <!-- Tier 3 Plants -->
-                <div class="plant-slot tier-3">
-                    <div class="plant-display">
-                        <div class="plant-emoji">🌳</div>
-                        <div class="plant-info">
-                            <h4>Ancient Oak</h4>
-                            <div class="tier-badge">Tier 3</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 95%"></div>
-                                </div>
-                                <span class="health-text">95% Healthy</span>
-                            </div>
-                        </div>
-                    </div>
+            <section class="garden-grid" id="garden-grid">
+                <!-- Tier 1 - Current Plant -->
+                <div class="tier-header">
+                    <h4>🌱 Tier 1 - Your Beginning</h4>
                 </div>
-
-                <div class="plant-slot tier-3">
-                    <div class="plant-display">
-                        <div class="plant-emoji">🌺</div>
-                        <div class="plant-info">
-                            <h4>Mystic Rose</h4>
-                            <div class="tier-badge">Tier 3</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 88%"></div>
-                                </div>
-                                <span class="health-text">88% Healthy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-slot tier-3">
-                    <div class="plant-display">
-                        <div class="plant-emoji">🍄</div>
-                        <div class="plant-info">
-                            <h4>Golden Mushroom</h4>
-                            <div class="tier-badge">Tier 3</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 92%"></div>
-                                </div>
-                                <span class="health-text">92% Healthy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tier 2 Plants -->
-                <div class="plant-slot tier-2">
-                    <div class="plant-display">
-                        <div class="plant-emoji">🌻</div>
-                        <div class="plant-info">
-                            <h4>Forest Sunflower</h4>
-                            <div class="tier-badge">Tier 2</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 76%"></div>
-                                </div>
-                                <span class="health-text">76% Healthy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-slot tier-2">
-                    <div class="plant-display">
-                        <div class="plant-emoji">🌿</div>
-                        <div class="plant-info">
-                            <h4>Healing Fern</h4>
-                            <div class="tier-badge">Tier 2</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 83%"></div>
-                                </div>
-                                <span class="health-text">83% Healthy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-slot tier-2">
-                    <div class="plant-display">
-                        <div class="plant-emoji">🌷</div>
-                        <div class="plant-info">
-                            <h4>Spring Tulip</h4>
-                            <div class="tier-badge">Tier 2</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 71%"></div>
-                                </div>
-                                <span class="health-text">71% Healthy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-slot tier-2">
-                    <div class="plant-display">
-                        <div class="plant-emoji">🌱</div>
-                        <div class="plant-info">
-                            <h4>Baby Fern</h4>
-                            <div class="tier-badge">Tier 2</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 75%"></div>
-                                </div>
-                                <span class="health-text">75% Healthy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tier 1 Plants -->
-                <div class="plant-slot tier-1">
-                    <div class="plant-display">
-                        <div class="plant-emoji">🌾</div>
-                        <div class="plant-info">
-                            <h4>Wild Grass</h4>
-                            <div class="tier-badge">Tier 1</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 65%"></div>
-                                </div>
-                                <span class="health-text">65% Healthy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-slot tier-1">
-                    <div class="plant-display">
-                        <div class="plant-emoji">🌿</div>
-                        <div class="plant-info">
-                            <h4>Forest Sprout</h4>
-                            <div class="tier-badge">Tier 1</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 58%"></div>
-                                </div>
-                                <span class="health-text">58% Healthy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-slot tier-1">
-                    <div class="plant-display">
-                        <div class="plant-emoji">☘️</div>
-                        <div class="plant-info">
-                            <h4>Lucky Clover</h4>
-                            <div class="tier-badge">Tier 1</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 62%"></div>
-                                </div>
-                                <span class="health-text">62% Healthy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                
                 <div class="plant-slot tier-1">
                     <div class="plant-display">
                         <div class="plant-emoji">🌱</div>
@@ -218,258 +59,589 @@
                             <div class="tier-badge">Tier 1</div>
                             <div class="plant-health">
                                 <div class="health-bar">
-                                    <div class="health-progress" style="width: 45%"></div>
+                                    <div class="health-progress" style="width: 100%"></div>
                                 </div>
-                                <span class="health-text">45% Healthy</span>
+                                <span class="health-text">100% Healthy</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="plant-slot tier-1">
+                <!-- Tiers 2-10 - Basic Journey -->
+                <div class="tier-header">
+                    <h4>🌿 Tiers 2-10 - Basic Growth</h4>
+                </div>
+
+                <div class="plant-slot locked">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🌿</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked">Tier 2</div>
+                            <div class="unlock-hint">Complete all habits to unlock</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked">
                     <div class="plant-display">
                         <div class="plant-emoji">🍀</div>
                         <div class="plant-info">
-                            <h4>Four Leaf Clover</h4>
-                            <div class="tier-badge">Tier 1</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 67%"></div>
-                                </div>
-                                <span class="health-text">67% Healthy</span>
+                            <h4>???</h4>
+                            <div class="tier-badge locked">Tier 3</div>
+                            <div class="unlock-hint">Keep growing</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🌻</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked">Tier 4</div>
+                            <div class="unlock-hint">Continue your journey</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🌷</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked">Tier 5</div>
+                            <div class="unlock-hint">First milestone ahead</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🌳</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked">Tier 6</div>
+                            <div class="unlock-hint">Growing stronger</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🌲</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked">Tier 7</div>
+                            <div class="unlock-hint">Ancient power emerges</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🌺</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked">Tier 8</div>
+                            <div class="unlock-hint">Mystery awaits</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🍄</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked">Tier 9</div>
+                            <div class="unlock-hint">Golden secrets</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked">
+                    <div class="plant-display">
+                        <div class="plant-emoji">💎</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked">Tier 10</div>
+                            <div class="unlock-hint">Crystal magic unlocks</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tiers 11-20 - Mystical Journey -->
+                <div class="tier-header mystical">
+                    <h4>✨ Tiers 11-20 - Mystical Powers</h4>
+                </div>
+
+                <div class="plant-slot locked mystical">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🔥</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked mystical">Tier 11</div>
+                            <div class="unlock-hint">Phoenix rises</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked mystical">
+                    <div class="plant-display">
+                        <div class="plant-emoji">⭐</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked mystical">Tier 12</div>
+                            <div class="unlock-hint">Stellar power</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked mystical">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🌌</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked mystical">Tier 13</div>
+                            <div class="unlock-hint">Galaxy awaits</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked mystical">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🪐</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked mystical">Tier 14</div>
+                            <div class="unlock-hint">Cosmic forces</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked mystical">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🌟</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked mystical">Tier 15</div>
+                            <div class="unlock-hint">Universal power</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked mystical">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🪷</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked mystical">Tier 16</div>
+                            <div class="unlock-hint">Divine essence</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked mystical">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🌙</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked mystical">Tier 17</div>
+                            <div class="unlock-hint">Celestial beauty</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked mystical">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🌈</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked mystical">Tier 18</div>
+                            <div class="unlock-hint">Rainbow magic</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked mystical">
+                    <div class="plant-display">
+                        <div class="plant-emoji">⚡</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked mystical">Tier 19</div>
+                            <div class="unlock-hint">Thunder power</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked mystical">
+                    <div class="plant-display">
+                        <div class="plant-emoji">☀️</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked mystical">Tier 20</div>
+                            <div class="unlock-hint">Solar mastery</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tier-header quantum">
+                    <h4>🔬 Tiers 21-30 - Quantum Realm</h4>
+                </div>
+
+                <div class="plant-slot locked quantum">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🔬</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked quantum">Tier 21</div>
+                            <div class="unlock-hint">Quantum mysteries</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked quantum">
+                    <div class="plant-display">
+                        <div class="plant-emoji">⏰</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked quantum">Tier 22</div>
+                            <div class="unlock-hint">Time itself</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked quantum">
+                    <div class="plant-display">
+                        <div class="plant-emoji">♾️</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked quantum">Tier 23</div>
+                            <div class="unlock-hint">Infinite power</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked quantum">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🛸</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked quantum">Tier 24</div>
+                            <div class="unlock-hint">Beyond reality</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked quantum">
+                    <div class="plant-display">
+                        <div class="plant-emoji">👑</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked quantum">Tier 25</div>
+                            <div class="unlock-hint">Royal genesis</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked quantum">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🕳️</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked quantum">Tier 26</div>
+                            <div class="unlock-hint">Void mastery</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked quantum">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🎭</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked quantum">Tier 27</div>
+                            <div class="unlock-hint">Reality bends</div>
+                        </div>
+                    </div>
+                </div>
+
+                                <div class="plant-slot locked quantum">
+                    <div class="plant-display">
+                        <div class="plant-emoji">⚰️</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked quantum">Tier 29</div>
+                            <div class="unlock-hint">Eternal secrets</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked quantum">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🏆</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked quantum">Tier 30</div>
+                            <div class="unlock-hint">Absolute achievement</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tiers 31-40 - Digital Realm -->
+                <div class="tier-header digital">
+                    <h4>💻 Tiers 31-40 - Digital Realm</h4>
+                </div>
+
+                <div class="plant-slot locked digital">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🔮</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked digital">Tier 31</div>
+                            <div class="unlock-hint">Nexus power</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked digital">
+                    <div class="plant-display">
+                        <div class="plant-emoji">💻</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked digital">Tier 32</div>
+                            <div class="unlock-hint">Matrix control</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked digital">
+                    <div class="plant-display">
+                        <div class="plant-emoji">👻</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked digital">Tier 33</div>
+                            <div class="unlock-hint">Holographic form</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked digital">
+                    <div class="plant-display">
+                        <div class="plant-emoji">📊</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked digital">Tier 34</div>
+                            <div class="unlock-hint">Data streams</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked digital">
+                    <div class="plant-display">
+                        <div class="plant-emoji">💾</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked digital">Tier 35</div>
+                            <div class="unlock-hint">Code mastery</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked digital">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🤖</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked digital">Tier 36</div>
+                            <div class="unlock-hint">Binary evolution</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked digital">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🧠</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked digital">Tier 37</div>
+                            <div class="unlock-hint">Neural networks</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked digital">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🤯</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked digital">Tier 38</div>
+                            <div class="unlock-hint">AI consciousness</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked digital">
+                    <div class="plant-display">
+                        <div class="plant-emoji">⚙️</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked digital">Tier 39</div>
+                            <div class="unlock-hint">Cyber enhancement</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked digital">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🖥️</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked digital">Tier 40</div>
+                            <div class="unlock-hint">Digital godhood</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tiers 41-49 - Legendary Realm -->
+                <div class="tier-header legendary">
+                    <h4>🐉 Tiers 41-49 - Legendary Powers</h4>
+                </div>
+
+                <div class="plant-slot locked legendary">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🐉</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked legendary">Tier 41</div>
+                            <div class="unlock-hint">Mythic awakening</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked legendary">
+                    <div class="plant-display">
+                        <div class="plant-emoji">⚔️</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked legendary">Tier 42</div>
+                            <div class="unlock-hint">Ancient power</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked legendary">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🗿</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked legendary">Tier 43</div>
+                            <div class="unlock-hint">Titan strength</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked legendary">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🌋</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked legendary">Tier 44</div>
+                            <div class="unlock-hint">Primordial force</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked legendary">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🎨</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked legendary">Tier 45</div>
+                            <div class="unlock-hint">Creator's touch</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked legendary">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🌍</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked legendary">Tier 46</div>
+                            <div class="unlock-hint">Universe maker</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked legendary">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🔨</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked legendary">Tier 47</div>
+                            <div class="unlock-hint">Reality shaper</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked legendary">
+                    <div class="plant-display">
+                        <div class="plant-emoji">👁️</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked legendary">Tier 48</div>
+                            <div class="unlock-hint">Existence master</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plant-slot locked legendary">
+                    <div class="plant-display">
+                        <div class="plant-emoji">🔱</div>
+                        <div class="plant-info">
+                            <h4>???</h4>
+                            <div class="tier-badge locked legendary">Tier 49</div>
+                            <div class="unlock-hint">Omnipotent bloom</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THE GRAND FINALE - TIER 50 -->
+                <div class="tier-header finale">
+                    <h4>🎆 THE GRAND FINALE - TIER 50 🎆</h4>
+                </div>
+
+                <div class="plant-slot locked finale">
+                    <div class="finale-glow">
+                        <div class="plant-display">
+                            <div class="plant-emoji">🎆</div>
+                            <div class="plant-info">
+                                <h4>???</h4>
+                                <div class="tier-badge locked finale">TIER 50</div>
+                                <div class="finale-text">THE ETERNAL GARDEN EMPEROR</div>
+                                <div class="unlock-hint">Rule over all gardens!</div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- LOCKED PLANTS SECTION -->
-                <div class="section-divider">
-                    <h4>🔒 Locked Plants - Discover Through Breeding!</h4>
-                </div>
-
-                <!-- Locked Regular Plants -->
-                <div class="plant-slot locked">
-                    <div class="plant-display">
-                        <div class="plant-silhouette">🌸</div>
-                        <div class="plant-info">
-                            <h4>Cherry Blossom</h4>
-                            <div class="tier-badge locked">Tier 3</div>
-                            <div class="unlock-hint">Breed: Rose + Oak</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-slot locked">
-                    <div class="plant-display">
-                        <div class="plant-silhouette">🌼</div>
-                        <div class="plant-info">
-                            <h4>Golden Daisy</h4>
-                            <div class="tier-badge locked">Tier 2</div>
-                            <div class="unlock-hint">Breed: Sunflower + Fern</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-slot locked">
-                    <div class="plant-display">
-                        <div class="plant-silhouette">🌹</div>
-                        <div class="plant-info">
-                            <h4>Rainbow Rose</h4>
-                            <div class="tier-badge locked">Tier 3</div>
-                            <div class="unlock-hint">Breed: Rose + Tulip</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-slot locked">
-                    <div class="plant-display">
-                        <div class="plant-silhouette">🌵</div>
-                        <div class="plant-info">
-                            <h4>Desert Cactus</h4>
-                            <div class="tier-badge locked">Tier 2</div>
-                            <div class="unlock-hint">Breed: Grass + Mushroom</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-slot locked">
-                    <div class="plant-display">
-                        <div class="plant-silhouette">🌲</div>
-                        <div class="plant-info">
-                            <h4>Pine Tree</h4>
-                            <div class="tier-badge locked">Tier 3</div>
-                            <div class="unlock-hint">Breed: Oak + Fern</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SEASONAL LIMITED PLANTS -->
-                <div class="section-divider seasonal">
-                    <h4>🎭 Limited Seasonal Plants</h4>
-                </div>
-
-                <!-- Winter Plants -->
-                <div class="plant-slot locked seasonal winter">
-                    <div class="seasonal-indicator">❄️ WINTER</div>
-                    <div class="plant-display">
-                        <div class="plant-silhouette">🎄</div>
-                        <div class="plant-info">
-                            <h4>Christmas Tree</h4>
-                            <div class="tier-badge seasonal">Limited</div>
-                            <div class="unlock-hint">Available: December Only</div>
-                            <div class="seasonal-status">23 days left!</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-slot locked seasonal winter">
-                    <div class="seasonal-indicator">❄️ WINTER</div>
-                    <div class="plant-display">
-                        <div class="plant-silhouette">❄️</div>
-                        <div class="plant-info">
-                            <h4>Frost Flower</h4>
-                            <div class="tier-badge seasonal">Limited</div>
-                            <div class="unlock-hint">Available: December Only</div>
-                            <div class="seasonal-status">23 days left!</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Spring Plants -->
-                <div class="plant-slot locked seasonal spring">
-                    <div class="seasonal-indicator">🌸 SPRING</div>
-                    <div class="plant-display">
-                        <div class="plant-silhouette">🌸</div>
-                        <div class="plant-info">
-                            <h4>Sakura Blossom</h4>
-                            <div class="tier-badge seasonal">Limited</div>
-                            <div class="unlock-hint">Available: March-May</div>
-                            <div class="seasonal-status">Coming in 3 months</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Summer Plants -->
-                <div class="plant-slot locked seasonal summer">
-                    <div class="seasonal-indicator">🌴 SUMMER</div>
-                    <div class="plant-display">
-                        <div class="plant-silhouette">🌴</div>
-                        <div class="plant-info">
-                            <h4>Tropical Palm</h4>
-                            <div class="tier-badge seasonal">Limited</div>
-                            <div class="unlock-hint">Available: June-August</div>
-                            <div class="seasonal-status">Coming in 6 months</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Fall Plants -->
-                <div class="plant-slot locked seasonal fall">
-                    <div class="seasonal-indicator">🍂 FALL</div>
-                    <div class="plant-display">
-                        <div class="plant-silhouette">🍁</div>
-                        <div class="plant-info">
-                            <h4>Maple Leaf Tree</h4>
-                            <div class="tier-badge seasonal">Limited</div>
-                            <div class="unlock-hint">Available: September-November</div>
-                            <div class="seasonal-status">Coming in 9 months</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Halloween Plants -->
-                <div class="plant-slot locked seasonal halloween">
-                    <div class="seasonal-indicator">🎃 HALLOWEEN</div>
-                    <div class="plant-display">
-                        <div class="plant-silhouette">🎃</div>
-                        <div class="plant-info">
-                            <h4>Magic Pumpkin</h4>
-                            <div class="tier-badge seasonal">Limited</div>
-                            <div class="unlock-hint">Available: October Only</div>
-                            <div class="seasonal-status">Coming in 10 months</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-                <!-- Tier 1 Plants -->
-                <div class="plant-slot tier-1">
-                    <div class="plant-display">
-                        <div class="plant-emoji">🌾</div>
-                        <div class="plant-info">
-                            <h4>Wild Grass</h4>
-                            <div class="tier-badge">Tier 1</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 65%"></div>
-                                </div>
-                                <span class="health-text">65% Healthy</span>
-                            </div>
-                        </div>
+            <!-- Getting Started Guide -->
+            <section class="getting-started">
+                <div class="guide-card">
+                    <div class="guide-icon">🌱</div>
+                    <div class="guide-text">
+                        <h4>Your Epic Journey Awaits!</h4>
+                        <p>Complete daily habits to unlock all 50 amazing plant tiers. Each tier brings new surprises!</p>
                     </div>
                 </div>
-
-                <div class="plant-slot tier-1">
-                    <div class="plant-display">
-                        <div class="plant-emoji">🌿</div>
-                        <div class="plant-info">
-                            <h4>Forest Sprout</h4>
-                            <div class="tier-badge">Tier 1</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 58%"></div>
-                                </div>
-                                <span class="health-text">58% Healthy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-slot tier-1">
-                    <div class="plant-display">
-                        <div class="plant-emoji">☘️</div>
-                        <div class="plant-info">
-                            <h4>Lucky Clover</h4>
-                            <div class="tier-badge">Tier 1</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 62%"></div>
-                                </div>
-                                <span class="health-text">62% Healthy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-slot tier-1">
-                    <div class="plant-display">
-                        <div class="plant-emoji">🌱</div>
-                        <div class="plant-info">
-                            <h4>Tiny Seedling</h4>
-                            <div class="tier-badge">Tier 1</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 45%"></div>
-                                </div>
-                                <span class="health-text">45% Healthy</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-slot tier-1">
-                    <div class="plant-display">
-                        <div class="plant-emoji">🍀</div>
-                        <div class="plant-info">
-                            <h4>Four Leaf Clover</h4>
-                            <div class="tier-badge">Tier 1</div>
-                            <div class="plant-health">
-                                <div class="health-bar">
-                                    <div class="health-progress" style="width: 67%"></div>
-                                </div>
-                                <span class="health-text">67% Healthy</span>
-                            </div>
-                        </div>
+                <div class="guide-card">
+                    <div class="guide-icon">🎆</div>
+                    <div class="guide-text">
+                        <h4>The Grand Finale</h4>
+                        <p>Reach Tier 50 to become the ETERNAL GARDEN EMPEROR and unlock the ultimate achievement!</p>
                     </div>
                 </div>
             </section>
@@ -479,8 +651,8 @@
                 <div class="reminder-card">
                     <div class="reminder-icon">💧</div>
                     <div class="reminder-text">
-                        <h4>Time to Water Your Garden!</h4>
-                        <p>Complete today's habits to boost all plant health by 10%</p>
+                        <h4>Start Your Garden Adventure!</h4>
+                        <p>Go to Dashboard and complete your habits to begin unlocking the 50-tier journey!</p>
                     </div>
                 </div>
             </section>
@@ -507,8 +679,12 @@
             <a href="shop.html" class="nav-item">
                 <div class="nav-icon">🛍️</div>
                 <span>Shop</span>
-            </a>
+            </div>
         </nav>
     </div>
+    <script src="garden.js"></script>
 </body>
 </html>
+
+
+               
