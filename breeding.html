@@ -18,206 +18,84 @@
                 </div>
             </div>
             <div class="currency">
-                <div class="coins">🪙 1,247</div>
-                <div class="diamonds">💎 15</div>
+                <div class="coins">🪙 0</div>
+                <div class="diamonds">💎 5</div>
             </div>
         </header>
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Active Breeding Slots -->
-            <section class="active-breeding">
-                <h3>🧪 Active Breeding Chambers</h3>
-                
-                <!-- Breeding Slot 1 - Active -->
-                <div class="breeding-slot active">
-                    <div class="breeding-header">
-                        <h4>Chamber 1</h4>
-                        <div class="breeding-status">Brewing...</div>
-                    </div>
-                    <div class="breeding-combination">
-                        <div class="parent-plant">
-                            <div class="plant-icon">🌺</div>
-                            <span>Mystic Rose</span>
-                        </div>
-                        <div class="breeding-symbol">✨</div>
-                        <div class="parent-plant">
-                            <div class="plant-icon">🌳</div>
-                            <span>Ancient Oak</span>
-                        </div>
-                    </div>
-                    <div class="breeding-timer">
-                        <div class="timer-display">
-                            <div class="time-remaining">4h 23m</div>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 65%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="breeding-chances">
-                        <div class="chance-item">
-                            <span class="chance-icon">🌸</span>
-                            <span class="chance-text">Cherry Blossom</span>
-                            <span class="chance-percent">45%</span>
-                        </div>
-                        <div class="chance-item">
-                            <span class="chance-icon">🌺</span>
-                            <span class="chance-text">Duplicate Rose</span>
-                            <span class="chance-percent">35%</span>
-                        </div>
-                        <div class="chance-item">
-                            <span class="chance-icon">🌳</span>
-                            <span class="chance-text">Duplicate Oak</span>
-                            <span class="chance-percent">20%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Breeding Slot 2 - Ready -->
-                <div class="breeding-slot ready">
-                    <div class="breeding-header">
-                        <h4>Chamber 2</h4>
-                        <div class="breeding-status ready">Ready!</div>
-                    </div>
-                    <div class="breeding-combination">
-                        <div class="parent-plant">
-                            <div class="plant-icon">🌻</div>
-                            <span>Forest Sunflower</span>
-                        </div>
-                        <div class="breeding-symbol">✨</div>
-                        <div class="parent-plant">
-                            <div class="plant-icon">🌿</div>
-                            <span>Healing Fern</span>
-                        </div>
-                    </div>
-                    <div class="breeding-result">
-                        <div class="result-card">
-                            <div class="result-icon">🌼</div>
-                            <div class="result-text">
-                                <h5>Success!</h5>
-                                <p>Golden Daisy</p>
-                            </div>
-                            <button class="collect-btn">Collect</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Breeding Slot 3 - Empty -->
-                <div class="breeding-slot empty">
-                    <div class="empty-chamber">
-                        <div class="empty-icon">🧪</div>
-                        <h4>Empty Chamber</h4>
-                        <p>Select plants to start brewing</p>
-                        <button class="start-breeding-btn">Start Breeding</button>
+            <!-- Getting Started Guide -->
+            <section class="getting-started-islands">
+                <div class="guide-card">
+                    <div class="guide-icon">🧪</div>
+                    <div class="guide-text">
+                        <h4>Welcome to Breeding!</h4>
+                        <p>Combine two plants from your collection to discover new species. Higher tier plants create better results!</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Plant Selection for Breeding -->
-            <section class="plant-selection">
-                <h3>Select Plants to Breed</h3>
-                <div class="selection-info">
-                    <p>Choose 2 plants from your garden to create something magical!</p>
-                </div>
+            <!-- Active Breeding Slots -->
+            <section class="active-breeding">
+                <h3>🧪 Breeding Chambers</h3>
                 
-                <div class="available-plants">
-                    <div class="plant-card selectable" data-plant="oak">
-                        <div class="plant-display">
-                            <div class="plant-emoji">🌳</div>
-                            <div class="plant-name">Ancient Oak</div>
-                            <div class="tier-badge">Tier 3</div>
-                        </div>
+                <!-- Breeding Slot 1 - Empty -->
+                <div class="breeding-slot empty" id="chamber-1">
+                    <div class="empty-chamber">
+                        <div class="empty-icon">🧪</div>
+                        <h4>Chamber 1</h4>
+                        <p>Select plants to start breeding</p>
+                        <button class="start-breeding-btn">Start Breeding</button>
                     </div>
-                    
-                    <div class="plant-card selectable" data-plant="rose">
-                        <div class="plant-display">
-                            <div class="plant-emoji">🌺</div>
-                            <div class="plant-name">Mystic Rose</div>
-                            <div class="tier-badge">Tier 3</div>
-                        </div>
+                </div>
+
+                <!-- Breeding Slot 2 - Empty -->
+                <div class="breeding-slot empty" id="chamber-2">
+                    <div class="empty-chamber">
+                        <div class="empty-icon">🧪</div>
+                        <h4>Chamber 2</h4>
+                        <p>Select plants to start breeding</p>
+                        <button class="start-breeding-btn">Start Breeding</button>
                     </div>
-                    
-                    <div class="plant-card selectable" data-plant="mushroom">
-                        <div class="plant-display">
-                            <div class="plant-emoji">🍄</div>
-                            <div class="plant-name">Golden Mushroom</div>
-                            <div class="tier-badge">Tier 3</div>
-                        </div>
-                    </div>
-                    
-                    <div class="plant-card selectable" data-plant="sunflower">
-                        <div class="plant-display">
-                            <div class="plant-emoji">🌻</div>
-                            <div class="plant-name">Forest Sunflower</div>
-                            <div class="tier-badge">Tier 2</div>
-                        </div>
-                    </div>
-                    
-                    <div class="plant-card selectable" data-plant="fern">
-                        <div class="plant-display">
-                            <div class="plant-emoji">🌿</div>
-                            <div class="plant-name">Healing Fern</div>
-                            <div class="tier-badge">Tier 2</div>
-                        </div>
-                    </div>
-                    
-                    <div class="plant-card selectable" data-plant="tulip">
-                        <div class="plant-display">
-                            <div class="plant-emoji">🌷</div>
-                            <div class="plant-name">Spring Tulip</div>
-                            <div class="tier-badge">Tier 2</div>
-                        </div>
+                </div>
+
+                <!-- Breeding Slot 3 - Empty -->
+                <div class="breeding-slot empty" id="chamber-3">
+                    <div class="empty-chamber">
+                        <div class="empty-icon">🧪</div>
+                        <h4>Chamber 3</h4>
+                        <p>Select plants to start breeding</p>
+                        <button class="start-breeding-btn">Start Breeding</button>
                     </div>
                 </div>
             </section>
 
             <!-- Breeding Guide -->
             <section class="breeding-guide">
-                <h3>🔮 Breeding Secrets</h3>
+                <h3>🔮 Breeding Tips</h3>
                 <div class="guide-cards">
                     <div class="guide-card">
                         <div class="guide-icon">⭐</div>
                         <div class="guide-text">
-                            <h5>Higher Tier = Better Chances</h5>
-                            <p>Tier 3 plants have higher success rates</p>
+                            <h5>Higher Tier = Better Results</h5>
+                            <p>Breeding higher tier plants gives better chances at rare discoveries!</p>
                         </div>
                     </div>
                     
                     <div class="guide-card">
-                        <div class="guide-icon">🕐</div>
+                        <div class="guide-icon">🎲</div>
                         <div class="guide-text">
-                            <h5>Breeding Time Varies</h5>
-                            <p>6-12 hours depending on plant rarity</p>
+                            <h5>Random Results</h5>
+                            <p>Each breeding creates a random plant based on parent tiers</p>
                         </div>
                     </div>
                     
                     <div class="guide-card">
-                        <div class="guide-icon">💰</div>
+                        <div class="guide-icon">🌟</div>
                         <div class="guide-text">
-                            <h5>Sell Duplicates</h5>
-                            <p>Turn unwanted plants into coins</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Limited Time Breeding -->
-            <section class="limited-breeding">
-                <div class="limited-card">
-                    <div class="limited-header">
-                        <h4>🎄 Limited Time: Winter Magic</h4>
-                        <div class="time-left">23 days left</div>
-                    </div>
-                    <div class="limited-content">
-                        <div class="limited-plant">
-                            <div class="plant-icon">🎄</div>
-                            <div class="plant-info">
-                                <h5>Christmas Tree</h5>
-                                <p>Only available in December!</p>
-                            </div>
-                        </div>
-                        <div class="limited-recipe">
-                            <span>🌲 Pine + ⭐ Golden Mushroom = 🎄</span>
+                            <h5>Discover New Plants</h5>
+                            <p>Breeding can unlock plants beyond your current tier!</p>
                         </div>
                     </div>
                 </div>
@@ -248,5 +126,6 @@
             </a>
         </nav>
     </div>
+    <script src="breeding.js"></script>
 </body>
 </html>

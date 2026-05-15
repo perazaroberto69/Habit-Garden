@@ -1,4 +1,4 @@
-
+// EPIC 50-tier plant progression
 let plantTiers = [
     { tier: 1, name: 'Tiny Seedling', emoji: '🌱' },
     { tier: 2, name: 'Baby Sprout', emoji: '🌿' },
@@ -29,9 +29,30 @@ let plantTiers = [
     { tier: 27, name: 'Reality Flower', emoji: '🎭' },
     { tier: 28, name: 'Dimension Tree', emoji: '🌀' },
     { tier: 29, name: 'Eternal Bloom', emoji: '⚰️' },
-    { tier: 30, name: 'ABSOLUTE PERFECTION', emoji: '🏆' }
+    { tier: 30, name: 'Absolute Rose', emoji: '🏆' },
+    { tier: 31, name: 'Nexus Flower', emoji: '🔮' },
+    { tier: 32, name: 'Matrix Tree', emoji: '💻' },
+    { tier: 33, name: 'Hologram Bloom', emoji: '👻' },
+    { tier: 34, name: 'Data Vine', emoji: '📊' },
+    { tier: 35, name: 'Code Blossom', emoji: '💾' },
+    { tier: 36, name: 'Binary Tree', emoji: '🤖' },
+    { tier: 37, name: 'Neural Flower', emoji: '🧠' },
+    { tier: 38, name: 'AI Garden', emoji: '🤯' },
+    { tier: 39, name: 'Cyber Rose', emoji: '⚙️' },
+    { tier: 40, name: 'Digital God Tree', emoji: '🖥️' },
+    { tier: 41, name: 'Mythic Bloom', emoji: '🐉' },
+    { tier: 42, name: 'Ancient Power', emoji: '⚔️' },
+    { tier: 43, name: 'Titan Flower', emoji: '🗿' },
+    { tier: 44, name: 'Primordial Tree', emoji: '🌋' },
+    { tier: 45, name: 'Creator Blossom', emoji: '🎨' },
+    { tier: 46, name: 'Universe Maker', emoji: '🌍' },
+    { tier: 47, name: 'Reality Shaper', emoji: '🔨' },
+    { tier: 48, name: 'Existence Master', emoji: '👁️' },
+    { tier: 49, name: 'Omnipotent Bloom', emoji: '🔱' },
+    { tier: 50, name: 'ETERNAL GARDEN EMPEROR', emoji: '🎆' }
 ];
 
+// Habit progress data
 let habitTargets = {
     'Water Intake': { current: 0, target: 8, unit: 'glasses' },
     'Exercise': { current: 0, target: 30, unit: 'min' },
@@ -102,15 +123,9 @@ function updateHabitDisplay(habitCard, habitName) {
     let progressText = habitCard.querySelector('.habit-info p');
     
     if (habitName === 'Sleep') {
-        if (habitInfo.current === 0) {
-            progressText.innerText = 'Track tonight';
-        } else {
-            progressText.innerText = habitInfo.current + '/' + habitInfo.target + ' ' + habitInfo.unit;
-        }
+        progressText.innerText = habitInfo.current === 0 ? 'Track tonight' : habitInfo.current + '/' + habitInfo.target + ' ' + habitInfo.unit;
     } else if (habitName === 'Steps') {
-        let currentFormatted = habitInfo.current.toLocaleString();
-        let targetFormatted = habitInfo.target.toLocaleString();
-        progressText.innerText = currentFormatted + '/' + targetFormatted;
+        progressText.innerText = habitInfo.current.toLocaleString() + '/' + habitInfo.target.toLocaleString();
     } else {
         progressText.innerText = habitInfo.current + '/' + habitInfo.target + ' ' + habitInfo.unit;
     }
@@ -136,14 +151,10 @@ function updatePlantProgress() {
     let healthPercentage = Math.round((completedCount / totalCount) * 100);
     
     let progressBar = document.querySelector('.progress');
-    if (progressBar) {
-        progressBar.style.width = healthPercentage + '%';
-    }
+    if (progressBar) progressBar.style.width = healthPercentage + '%';
     
     let percentageText = document.querySelector('.percentage');
-    if (percentageText) {
-        percentageText.innerText = healthPercentage + '%';
-    }
+    if (percentageText) percentageText.innerText = healthPercentage + '%';
     
     if (healthPercentage === 100 && completedCount === totalCount) {
         tierUpPlant();
@@ -154,7 +165,7 @@ function updatePlantProgress() {
             if (nextTier <= plantTiers.length) {
                 nextTierText.innerText = 'Progress to Tier ' + nextTier + ': ' + completedCount + '/' + totalCount + ' habits completed today';
             } else {
-                nextTierText.innerText = '🏆 ABSOLUTE PERFECTION ACHIEVED! 🏆';
+                nextTierText.innerText = '🎆 THE ETERNAL GARDEN EMPEROR REIGNS! 🎆';
             }
         }
     }
@@ -165,9 +176,9 @@ function updatePlantProgress() {
 // Tier up the plant
 function tierUpPlant() {
     if (userData.currentTier < plantTiers.length) {
-        userData.currentTier = userData.currentTier + 1;
-        userData.plantsCollected = userData.plantsCollected + 1;
-        userData.totalTierUps = userData.totalTierUps + 1;
+        userData.currentTier++;
+        userData.plantsCollected++;
+        userData.totalTierUps++;
         
         let newPlant = plantTiers[userData.currentTier - 1];
         userData.plantName = newPlant.name;
@@ -180,45 +191,75 @@ function tierUpPlant() {
         
         if (userData.currentTier % 5 === 0) {
             let bonusDiamonds = Math.floor(userData.currentTier / 5);
-            if (userData.currentTier >= 25) bonusDiamonds += 10;
+            if (userData.currentTier >= 40) bonusDiamonds += 50;
+            else if (userData.currentTier >= 30) bonusDiamonds += 25;
+            else if (userData.currentTier >= 20) bonusDiamonds += 10;
             userData.diamonds += bonusDiamonds;
             updateDiamondDisplay();
         }
         
         resetHabits();
-        
-        let message = getTierUpMessage(userData.currentTier, bonusCoins);
-        alert(message);
+        saveUserData();
+        alert(getTierUpMessage(userData.currentTier, bonusCoins));
+    } else {
+        addCoins(100000);
+        userData.diamonds += 1000;
+        updateDiamondDisplay();
+        saveUserData();
+        alert('🎆👑 GRAND FINALE! 👑🎆\n\nYou achieved THE ETERNAL GARDEN EMPEROR!\n\n+100,000 COINS! +1,000 DIAMONDS!\n\nYou are the ultimate gardener! 🎆');
+        resetHabits();
     }
 }
 
 // Calculate bonus coins based on tier
 function getBonusCoins(tier) {
-    if (tier >= 25) return 800 + (tier * 100);
-    if (tier >= 20) return 500 + (tier * 50);
-    if (tier >= 15) return 300 + (tier * 30);
-    if (tier >= 10) return 200 + (tier * 20);
-    if (tier >= 5) return 100 + (tier * 15);
-    return 50 + (tier * 25);
+    if (tier >= 45) return 2000 + (tier * 200);
+    if (tier >= 40) return 1500 + (tier * 150);
+    if (tier >= 35) return 1200 + (tier * 120);
+    if (tier >= 30) return 1000 + (tier * 100);
+    if (tier >= 25) return 800 + (tier * 80);
+    if (tier >= 20) return 600 + (tier * 60);
+    if (tier >= 15) return 400 + (tier * 40);
+    if (tier >= 10) return 250 + (tier * 25);
+    if (tier >= 5) return 150 + (tier * 20);
+    return 75 + (tier * 15);
 }
 
 // Get special tier up messages
 function getTierUpMessage(tier, coins) {
     let plant = plantTiers[tier - 1];
     
-    if (tier === 30) {
-        return '🏆 ABSOLUTE PERFECTION! Your ' + plant.name + ' is perfect! +' + coins + ' coins!';
-    } else if (tier >= 25) {
-        return '👑 ULTIMATE TIER! Your ' + plant.name + ' transcends reality! +' + coins + ' coins!';
-    } else if (tier >= 20) {
-        return '☀️ SOLAR TIER! Your ' + plant.name + ' radiates cosmic power! +' + coins + ' coins!';
-    } else if (tier >= 15) {
-        return '🌟 UNIVERSE TIER! Your ' + plant.name + ' contains cosmic essence! +' + coins + ' coins!';
-    } else if (tier >= 10) {
-        return '💎 CRYSTAL TIER! Your ' + plant.name + ' sparkles with magic! +' + coins + ' coins!';
-    } else {
-        return '🎉 Your plant evolved to ' + plant.name + '! +' + coins + ' coins!';
+    if (tier === 50) {
+        return '🎆👑 GRAND FINALE! 👑🎆\n\nYour ' + plant.name + ' rules all existence!\n\n+' + coins + ' coins! +200 diamonds!';
     }
+    if (tier >= 45) {
+        return '🔱 OMNIPOTENT! Your ' + plant.name + ' controls existence! +' + coins + ' coins!';
+    }
+    if (tier >= 40) {
+        return '🖥️ DIGITAL GOD! Your ' + plant.name + ' transcends reality! +' + coins + ' coins!';
+    }
+    if (tier >= 35) {
+        return '💾 CYBER TIER! Your ' + plant.name + ' exists as pure code! +' + coins + ' coins!';
+    }
+    if (tier >= 30) {
+        return '🏆 ABSOLUTE! Your ' + plant.name + ' achieved perfection! +' + coins + ' coins!';
+    }
+    if (tier >= 25) {
+        return '👑 GENESIS! Your ' + plant.name + ' holds creation power! +' + coins + ' coins!';
+    }
+    if (tier >= 20) {
+        return '☀️ SOLAR! Your ' + plant.name + ' radiates cosmic power! +' + coins + ' coins!';
+    }
+    if (tier >= 15) {
+        return '🌟 UNIVERSE! Your ' + plant.name + ' contains cosmic essence! +' + coins + ' coins!';
+    }
+    if (tier >= 10) {
+        return '💎 CRYSTAL! Your ' + plant.name + ' sparkles with magic! +' + coins + ' coins!';
+    }
+    if (tier >= 5) {
+        return '🌸 BLOOMING! Your ' + plant.name + ' is beautiful! +' + coins + ' coins!';
+    }
+    return '🎉 Your plant evolved to ' + plant.name + '! +' + coins + ' coins!';
 }
 
 // Update plant display
@@ -233,23 +274,15 @@ function updatePlantDisplay() {
     
     let currentPlant = plantTiers[userData.currentTier - 1];
     
-    if (plantEmoji) {
-        plantEmoji.innerText = currentPlant.emoji;
-    }
-    if (plantNameElement) {
-        plantNameElement.innerText = currentPlant.name;
-    }
-    if (plantTierElement) {
-        plantTierElement.innerText = 'Tier ' + userData.currentTier;
-    }
+    if (plantEmoji) plantEmoji.innerText = currentPlant.emoji;
+    if (plantNameElement) plantNameElement.innerText = currentPlant.name;
+    if (plantTierElement) plantTierElement.innerText = 'Tier ' + userData.currentTier;
 }
 
 // Update stats display
 function updateStats() {
     let statNumbers = document.querySelectorAll('.stat-number');
-    if (statNumbers[1]) {
-        statNumbers[1].innerText = userData.plantsCollected;
-    }
+    if (statNumbers[1]) statNumbers[1].innerText = userData.plantsCollected;
     
     let dayElement = document.querySelector('.user-details p');
     if (dayElement) {
@@ -280,14 +313,14 @@ function resetHabits() {
 
 // Add coins
 function addCoins(amount) {
-    userData.coins = userData.coins + amount;
+    userData.coins += amount;
     updateCoinDisplay();
 }
 
 // Remove coins
 function removeCoins(amount) {
     if (userData.coins >= amount) {
-        userData.coins = userData.coins - amount;
+        userData.coins -= amount;
         updateCoinDisplay();
     }
 }
@@ -295,17 +328,13 @@ function removeCoins(amount) {
 // Update coin display
 function updateCoinDisplay() {
     let coinDisplay = document.querySelector('.coins');
-    if (coinDisplay) {
-        coinDisplay.innerText = '🪙 ' + userData.coins;
-    }
+    if (coinDisplay) coinDisplay.innerText = '🪙 ' + userData.coins;
 }
 
 // Update diamond display
 function updateDiamondDisplay() {
     let diamondDisplay = document.querySelector('.diamonds');
-    if (diamondDisplay) {
-        diamondDisplay.innerText = '💎 ' + userData.diamonds;
-    }
+    if (diamondDisplay) diamondDisplay.innerText = '💎 ' + userData.diamonds;
 }
 
 // Save data

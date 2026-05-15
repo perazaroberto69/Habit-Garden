@@ -52,20 +52,191 @@ let plantTiers = [
     { tier: 50, name: 'ETERNAL GARDEN EMPEROR', emoji: '🎆', coinsPerHour: 100000 }
 ];
 
+// Island data
+let islands = [
+    { id: 'starter', name: 'Starter Grove', slots: 6, cost: 0, costType: 'coins', bonus: 0, unlocked: true },
+    { id: 'meadow', name: 'Forest Meadow', slots: 8, cost: 500, costType: 'coins', bonus: 10, unlocked: false },
+    { id: 'sanctuary', name: 'Mystic Sanctuary', slots: 10, cost: 1500, costType: 'coins', bonus: 25, unlocked: false },
+    { id: 'mountain', name: 'Mountain Peak', slots: 12, cost: 3000, costType: 'coins', bonus: 40, unlocked: false },
+    { id: 'lake', name: 'Floating Lake', slots: 15, cost: 5000, costType: 'coins', bonus: 50, unlocked: false },
+    { id: 'moonlit', name: 'Moonlit Sanctuary', slots: 20, cost: 15, costType: 'diamonds', bonus: 75, unlocked: false },
+    { id: 'volcanic', name: 'Volcanic Island', slots: 25, cost: 25, costType: 'diamonds', bonus: 100, unlocked: false },
+    { id: 'paradise', name: 'Paradise Dimension', slots: 30, cost: 50, costType: 'diamonds', bonus: 150, unlocked: false }
+];
+
 let userData = {
     coins: 0,
     diamonds: 5,
     currentTier: 1,
     unlockedPlants: [],
-    islandSlots: {}
+    islandSlots: {},
+    unlockedIslands: ['starter']
 };
 
 let selectedSlot = null;
+
+// Setup purchase button clicks
+function setupPurchaseButtons() {
+    let purchaseButtons = document.querySelectorAll('.purchase-btn');
+    
+    for (let i = 0; i < purchaseButtons.length; i++) {
+        purchaseButtons[i].addEventListener('click', function() {
+            let islandCard = this.closest('.island-card.purchasable, .island-card.premium-purchasable');
+            purchaseIsland(islandCard);
+        });
+    }
+}
+
+// Purchase an island
+function purchaseIsland(islandCard) {
+    // Get island info from the card
+    let islandName = islandCard.querySelector('h4').innerText;
+    let priceElement = islandCard.querySelector('.island-price').innerText;
+    
+    // Find matching island
+    let island = null;
+    for (let i = 0; i < islands.length; i++) {
+        if (islandName.includes(islands[i].name)) {
+            island = islands[i];
+            break;
+        }
+    }
+    
+    if (!island) return;
+    
+    // Check if already unlocked
+    if (userData.unlockedIslands.indexOf(island.id) !== -1) {
+        alert('You already own this island!');
+        return;
+    }
+    
+    // Check if player has enough currency
+    if (island.costType === 'coins') {
+        if (userData.coins < island.cost) {
+            alert('Not enough coins! You need ' + island.cost + ' coins.');
+            return;
+        }
+        userData.coins -= island.cost;
+    } else {
+        if (userData.diamonds < island.cost) {
+            alert('Not enough diamonds! You need ' + island.cost + ' diamonds.');
+            return;
+        }
+        userData.diamonds -= island.cost;
+    }
+    
+    // Unlock the island
+    userData.unlockedIslands.push(island.id);
+    island.unlocked = true;
+    
+    // Update displays
+    updateCurrency();
+    saveIslandData();
+    
+    // Show success message
+    alert('🎉 Congratulations! You purchased ' + island.name + '!\n\n' + island.slots + ' plant slots available\n+' + island.bonus + '% income bonus!');
+    
+    // Replace purchase button with island slots
+    let islandHTML = generateIslandSlots(island);
+    islandCard.classList.remove('purchasable', 'premium-purchasable');
+    islandCard.classList.add('active');
+    islandCard.innerHTML = `
+        <div class="island-header">
+            <h4>${getIslandEmoji(island.id)} ${island.name}</h4>
+            <div class="island-income">+0 coins/hr</div>
+        </div>
+        <div class="island-plants">
+            ${islandHTML}
+        </div>
+        <div class="island-status">0/${island.slots} slots filled • Place your plants!</div>
+    `;
+    
+    // Setup clicks for new slots
+    setupSlotClicksForIsland(islandCard);
+}
+
+// Generate island slots HTML
+function generateIslandSlots(island) {
+    let html = '';
+    for (let i = 0; i < island.slots; i++) {
+        let slotId = island.id + '-slot-' + (i + 1);
+        html += `
+            <div class="plant-slot empty" data-slot-id="${slotId}">
+                <div class="empty-slot">+</div>
+                <div class="slot-hint">Empty</div>
+            </div>
+        `;
+    }
+    return html;
+}
+
+// Get island emoji
+function getIslandEmoji(islandId) {
+    let emojis = {
+        'starter': '🏝️',
+        'meadow': '🌸',
+        'sanctuary': '✨',
+        'mountain': '🏔️',
+        'lake': '🌊',
+        'moonlit': '🌙',
+        'volcanic': '🌋',
+        'paradise': '🎆'
+    };
+    return emojis[islandId] || '🏝️';
+}
+
+// Setup slot clicks for a specific island
+function setupSlotClicksForIsland(islandCard) {
+    let slots = islandCard.querySelectorAll('.plant-slot.empty');
+    
+    for (let i = 0; i < slots.length; i++) {
+        slots[i].addEventListener('click', function() {
+            openPlantSelector(this);
+        });
+    }
+}
+
+// Load unlocked islands on page load
+function loadUnlockedIslands() {
+    for (let i = 0; i < islands.length; i++) {
+        let island = islands[i];
+        
+        if (userData.unlockedIslands.indexOf(island.id) !== -1 && island.id !== 'starter') {
+            island.unlocked = true;
+            
+            // Find the island card and update it
+            let islandCards = document.querySelectorAll('.island-card.purchasable, .island-card.premium-purchasable');
+            for (let j = 0; j < islandCards.length; j++) {
+                let cardName = islandCards[j].querySelector('h4').innerText;
+                if (cardName.includes(island.name)) {
+                    islandCards[j].classList.remove('purchasable', 'premium-purchasable');
+                    islandCards[j].classList.add('active');
+                    
+                    let islandHTML = generateIslandSlots(island);
+                    islandCards[j].innerHTML = `
+                        <div class="island-header">
+                            <h4>${getIslandEmoji(island.id)} ${island.name}</h4>
+                            <div class="island-income">+0 coins/hr</div>
+                        </div>
+                        <div class="island-plants">
+                            ${islandHTML}
+                        </div>
+                        <div class="island-status">0/${island.slots} slots filled • Place your plants!</div>
+                    `;
+                    
+                    setupSlotClicksForIsland(islandCards[j]);
+                    break;
+                }
+            }
+        }
+    }
+}
 
 // Initialize islands page
 function initializeIslands() {
     loadIslandData();
     setupSlotClicks();
+    setupPurchaseButtons();
 }
 
 // Load user data
@@ -89,9 +260,18 @@ function loadIslandData() {
         if (savedSlots) {
             userData.islandSlots = JSON.parse(savedSlots);
         }
+        
+        // Load unlocked islands
+        let savedIslands = localStorage.getItem('unlockedIslands');
+        if (savedIslands) {
+            userData.unlockedIslands = JSON.parse(savedIslands);
+        } else {
+            userData.unlockedIslands = ['starter'];
+        }
     }
     
     updateCurrency();
+    loadUnlockedIslands();
     loadPlacedPlants();
     updateTotalIncome();
 }
@@ -174,6 +354,21 @@ function generatePlantOptions() {
 function placePlantOnSlot(tier) {
     if (!selectedSlot) return;
     
+    // Check if this plant is already placed on this island
+    let isPlantAlreadyPlaced = false;
+    for (let slotId in userData.islandSlots) {
+        if (userData.islandSlots[slotId].tier === tier) {
+            isPlantAlreadyPlaced = true;
+            break;
+        }
+    }
+    
+    if (isPlantAlreadyPlaced) {
+        alert('This plant is already placed on this island! Each plant can only be placed once per island.');
+        closePlantSelector();
+        return;
+    }
+    
     let plant = plantTiers[tier - 1];
     
     // Get slot ID
@@ -189,7 +384,7 @@ function placePlantOnSlot(tier) {
     selectedSlot.innerHTML = `
         <div class="plant-icon">${plant.emoji}</div>
         <div class="plant-earnings">+${plant.coinsPerHour}/hr</div>
-        <button class="remove-plant" onclick="removePlant('${slotId}')">✕</button>
+        <button class="remove-plant" onclick="removePlant('${slotId}', event)">✕</button>
     `;
     
     // Save to island slots
@@ -206,7 +401,12 @@ function placePlantOnSlot(tier) {
 }
 
 // Remove plant from slot
-function removePlant(slotId) {
+function removePlant(slotId, event) {
+    // Stop the click from triggering the slot click
+    if (event) {
+        event.stopPropagation();
+    }
+    
     let slot = document.querySelector('[data-slot-id="' + slotId + '"]');
     if (!slot) return;
     
@@ -242,7 +442,7 @@ function loadPlacedPlants() {
             slot.innerHTML = `
                 <div class="plant-icon">${plantData.emoji}</div>
                 <div class="plant-earnings">+${plantData.coinsPerHour}/hr</div>
-                <button class="remove-plant" onclick="removePlant('${slotId}')">✕</button>
+                <button class="remove-plant" onclick="removePlant('${slotId}', event)">✕</button>
             `;
         }
     }
@@ -296,9 +496,20 @@ function closePlantSelector() {
 // Save island data
 function saveIslandData() {
     localStorage.setItem('islandSlots', JSON.stringify(userData.islandSlots));
+    localStorage.setItem('unlockedIslands', JSON.stringify(userData.unlockedIslands));
+    
+    // Also update main userData
+    let savedData = localStorage.getItem('habitGardenData');
+    if (savedData) {
+        let data = JSON.parse(savedData);
+        data.coins = userData.coins;
+        data.diamonds = userData.diamonds;
+        localStorage.setItem('habitGardenData', JSON.stringify(data));
+    }
 }
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     initializeIslands();
 });
+
