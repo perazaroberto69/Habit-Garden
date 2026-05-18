@@ -1548,3 +1548,239 @@ body {
     font-weight: bold;
     margin-top: 8px;
 }
+
+/* Breeding Chances Preview */
+.breeding-chances-preview {
+    background: linear-gradient(135deg, #fff0e6 0%, #ffe6cc 100%);
+    border: 3px solid #daa520;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.breeding-chances-preview h4 {
+    color: #2d5016;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+#chances-list .chance-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+
+.chance-icon {
+    font-size: 24px;
+}
+
+.chance-text {
+    flex: 1;
+    font-weight: bold;
+    color: #2d5016;
+    font-size: 14px;
+}
+
+.chance-tier {
+    font-size: 11px;
+    background: linear-gradient(135deg, #daa520 0%, #ffd700 100%);
+    color: #8b4513;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.chance-percent {
+    font-weight: bold;
+    color: #228b22;
+    font-size: 16px;
+}
+
+.hybrid-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #9370db 0%, #8a2be2 100%);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+/* Duplicate Styles */
+.breeding-status.duplicate {
+    background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+}
+
+.result-card.duplicate {
+    background: linear-gradient(135deg, #fffaf0 0%, #fdf5e6 100%);
+    border: 3px solid #ffa500;
+}
+
+.duplicate-count {
+    font-size: 13px;
+    color: #666;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.duplicate-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.keep-btn {
+    flex: 1;
+    background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.keep-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(50, 205, 50, 0.4);
+}
+
+.sell-btn {
+    flex: 1;
+    background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sell-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 165, 0, 0.4);
+}
+
+/* Garden Grid Section */
+.garden-grid-section {
+    margin-bottom: 30px;
+}
+
+.tier-subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Hybrid Rarity Sections */
+.hybrid-rarity-section {
+    margin-bottom: 25px;
+}
+
+.rarity-title {
+    color: #2d5016;
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background: linear-gradient(135deg, rgba(143, 188, 143, 0.2), rgba(143, 188, 143, 0.1));
+    border-left: 4px solid #8fbc8f;
+    border-radius: 8px;
+}
+
+/* Plant Count Badge */
+.plant-count {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: linear-gradient(135deg, #32cd32 0%, #228b22 100%);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(50, 205, 50, 0.3);
+}
+
+.plant-count.hybrid {
+    background: linear-gradient(135deg, #9370db 0%, #8a2be2 100%);
+    box-shadow: 0 2px 8px rgba(147, 112, 219, 0.3);
+}
+
+/* Hybrid Plant Slots */
+.plant-slot.hybrid {
+    position: relative;
+}
+
+.plant-slot.hybrid.discovered {
+    border-color: #9370db;
+    background: linear-gradient(135deg, #f8f0ff 0%, #f0e6ff 100%);
+}
+
+.plant-slot.hybrid.locked {
+    border-color: #ddd;
+    background: linear-gradient(135deg, #f5f5f5 0%, #ebebeb 100%);
+    opacity: 0.6;
+}
+
+.tier-badge.hybrid {
+    background: linear-gradient(135deg, #9370db 0%, #8a2be2 100%);
+    color: white;
+}
+
+.tier-badge.hybrid.locked {
+    background: #ccc;
+    color: #666;
+}
+
+/* Breeding Recipe Display */
+.breeding-recipe {
+    font-size: 11px;
+    margin-top: 8px;
+    padding: 5px 8px;
+    background: rgba(147, 112, 219, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    color: #2d5016;
+}
+
+.breeding-recipe.hidden-recipe {
+    background: rgba(200, 200, 200, 0.2);
+    color: #999;
+}
+
+/* Unlocked Plant Styling */
+.plant-slot.unlocked {
+    border-color: #32cd32;
+    background: linear-gradient(135deg, #f0fff0 0%, #e8f5e8 100%);
+}
+
+.plant-slot {
+    position: relative;
+}
+
+/* No Hybrids Message */
+.no-hybrids {
+    text-align: center;
+    color: #999;
+    padding: 30px;
+    font-style: italic;
+}
+
+/* Adjust existing plant slot for better spacing */
+.plant-slot .plant-display {
+    position: relative;
+    padding: 10px;
+}
+
